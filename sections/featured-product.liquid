@@ -27,6 +27,7 @@
     section
     section--full-width
     {% if section.settings.background_color != blank %}color-custom-{{ section.id }}{% endif %}
+    {% render 'custom-css-classes', custom_class: section.settings.custom_css_classes %}
   "
   style="--gallery-aspect-ratio: {{ gallery_aspect_ratio }};"
   data-testid="featured-product-{{ section.id }}"

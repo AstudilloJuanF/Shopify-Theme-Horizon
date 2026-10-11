@@ -1200,7 +1200,7 @@
     "bottom_row_background": "Bottom row background",
     "bottom_row_text": "Bottom row text",
     // Custom Theme settings
-    "custom_css_classes": "Custom CSS Classes"
+    "custom_css_classes": "Custom class names"
   },
   "text_defaults": {
     "accordion_heading": "Accordion heading",

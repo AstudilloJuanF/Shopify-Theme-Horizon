@@ -41,7 +41,7 @@
         "divider_color": "{{ settings.color_palette.color3 }}",
         "padding-block-start": 15,
         "padding-block-end": 15,
-        "custom_css_classes": "doge"
+        "custom_css_classes": ""
       }
     },
     "header_section": {

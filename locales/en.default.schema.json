@@ -163,7 +163,9 @@
     "disclosures": "Disclosures",
     "disclosures_metafield_content": "Required safety warnings and regulatory disclosures for this product.",
     "app_required_for_ratings": "An app is required for product ratings. [Learn more](https://help.shopify.com/manual/apps)",
-    "navigation": "Navigation"
+    "navigation": "Navigation",
+    // Custom theme content
+    "custom_css_classes": "Custom CSS Classes"
   },
   "html_defaults": {
     "join_our_email_list": "<h2>Join our email list</h2>",

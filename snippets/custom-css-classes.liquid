@@ -1,0 +1,20 @@
+{%- doc -%}
+  Renders liquid code for user-defined custom CSS classes, intended for use within sections or blocks.
+
+  @param {string} [custom_class] - Custom user-defined classes for the block
+
+  @example
+  {% render 'custom-css-classes', custom_class: section.settings.custom_css_classes %}
+{%- enddoc -%}
+
+{%- liquid
+  assign custom_class_values = custom_class | replace: ',', ' ' | split: ' '
+  assign custom_css_classes = ''
+
+  for css_class in custom_class_values
+    assign custom_css_classes = custom_css_classes | append: css_class | append: ' '
+  endfor
+
+  assign custom_css_classes = custom_css_classes | strip
+-%}
+{{ custom_css_classes }}

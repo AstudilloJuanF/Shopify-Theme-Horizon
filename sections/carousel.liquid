@@ -15,6 +15,7 @@
     section-carousel
     spacing-style
     gap-style
+    {% render 'custom-css-classes', custom_class: section.settings.custom_css_classes %}
   "
   style="
     {% render 'spacing-style', settings: section.settings %}

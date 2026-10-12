@@ -1,0 +1,52 @@
+{% # theme-check-disable %}
+{%- for custom_font_metaobjects in settings.custom_fonts -%}
+    {%- liquid
+        assign custom_font_is_valid = false
+
+        assign accepted_font_mime_types = 'otf, ttf, woff, woff2' | replace: ' ', '' | split: ','
+        assign accepted_font_types = 'opentype, truetype, woff, woff2' | replace: ' ', '' | split: ','
+        assign c_font_type = ''
+
+        assign c_font_name = custom_font_metaobjects.name.value
+        assign c_font_url = custom_font_metaobjects.file.value.url
+
+        if c_font_name.size.size == 0 or c_font_url.size == 0
+            continue
+        endif
+
+        assign c_font_url = c_font_url | split: '?'
+        assign c_font_url = c_font_url[0]
+        assign c_font_ext = c_font_url | downcase | split: '.'
+
+        if c_font_ext.size > 1
+            assign ext_pos = c_font_ext.size | minus: 1
+            assign c_font_ext = c_font_ext[ext_pos]
+
+            for font_mime_type in accepted_font_mime_types
+                if font_mime_type == c_font_ext and c_font_name.size > 1
+                    assign c_font_type = accepted_font_types[forloop.index0]
+                    assign custom_font_is_valid = true
+                    break
+                endif
+            endfor
+        endif
+    -%}
+    {%- if custom_font_is_valid == true -%}
+        <link
+            rel="preload"
+            as="font"
+            href="{{ c_font_url }}"
+            type="font/{{ c_font_ext }}"
+            crossorigin
+            fetchpriority="low"
+        >
+        <style>
+            @font-face {
+                font-family: "{{ c_font_name }}";
+                src: 
+                    url("{{ c_font_url }}") format("{{ c_font_type }}");
+            }
+        </style>
+    {%- endif -%}
+{%- endfor -%}
+{% # theme-check-enable %}

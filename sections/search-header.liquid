@@ -7,7 +7,7 @@
 <div
   class="section-background{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
 ></div>
-<div class="section section--page-width{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}">
+<div class="{% render 'custom-css-classes', custom_class: section.settings.custom_css_classes %} section section--page-width{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}">
   <div
     class="spacing-style search-page__header"
     style="

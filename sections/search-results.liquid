@@ -17,7 +17,7 @@
 ></div>
 
 <results-list
-  class="section product-grid-container spacing-style{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  class="{% render 'custom-css-classes', custom_class: section.settings.custom_css_classes %} section product-grid-container spacing-style{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
   style="--padding-block-start: {{ section.settings.padding-block-start }}px; --padding-block-end: {{ section.settings.padding-block-end }}px;"
   section-id="{{ section.id }}"
   infinite-scroll="{{ section.settings.enable_infinite_scroll }}"

@@ -21,6 +21,7 @@
       blog-posts
       spacing-style
       size-style
+      {% render 'custom-css-classes', custom_class: section.settings.custom_css_classes %}
     "
     data-testid="blog-posts"
     style="{% render 'spacing-style', settings: section.settings %}"

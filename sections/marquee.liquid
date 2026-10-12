@@ -15,7 +15,7 @@
   class="section-background{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
 ></div>
 <marquee-component
-  class="section spacing-style gap-style{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
+  class="{% render 'custom-css-classes', custom_class: section.settings.custom_css_classes %} section spacing-style gap-style{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
   style="
     {%- render 'spacing-style', settings: section.settings %};
     {% render 'gap-style', value: gap_between_elements, name: 'marquee-gap' %}

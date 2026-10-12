@@ -30,6 +30,7 @@
     {% if section.settings.background_color != blank %}color-custom-{{ section.id }}{% endif %}
     spacing-style
     gap-style
+    {% render 'custom-css-classes', custom_class: section.settings.custom_css_classes %}
   "
   data-testid="product-hotspots"
   style="

@@ -15,7 +15,7 @@
 {% enddoc %}
 
 <cart-items-component
-  class="cart-items-component"
+  class="{% render 'custom-css-classes', custom_class: section.settings.custom_css_classes %} cart-items-component"
   {% if is_drawer %}
     data-drawer
     view-event-trigger="dialog"

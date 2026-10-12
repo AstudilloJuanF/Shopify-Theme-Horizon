@@ -1098,6 +1098,36 @@
     ]
   },
   {
+    "name": "Custom Fonts",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Uses custom metaobject 'custom_font'",
+        "info": "In order to use this feature you must manually create a metaobject of handle 'custom_font', containing a name field (single line text) and a file field (any file type)."
+      },
+      {
+        "type": "paragraph",
+        "content": "Name: Font name, used as reference by the theme's CSS font rules",
+      },
+      {
+        "type": "paragraph",
+        "content": "File: The file containing the custom fonts",
+      },
+      {
+        "type": "paragraph",
+        "content": "[Manage metaobjects](https://admin.shopify.com/content/metaobjects)"
+      },
+      {
+        "type": "metaobject_list",
+        "id": "custom_fonts",
+        "label": "Fonts",
+        "metaobject_type": "custom_font",
+        "limit": 50,
+        "info": "[Create metaobject](https://admin.shopify.com/settings/custom_data/metaobjects/create)"
+      }
+    ]
+  },
+  {
     "name": "t:names.page_layout",
     "settings": [
       {
